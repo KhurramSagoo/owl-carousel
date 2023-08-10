@@ -2,7 +2,6 @@ import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css'
-import HomeBlock from './HomeBlock';
 import photo1 from '../assets/photo1.png'
 import photo2 from '../assets/photo2.png'
 import photo3 from '../assets/photo3.png'
@@ -14,9 +13,9 @@ const Cat = () => {
         loop: true,
         dots: true,
         autoplay: true,
-        autoplayTimeout: 2000,
-        autoplaySpeed: 1200,
-        smartSpeed: 500,
+        autoplayTimeout: 4000,
+        autoplaySpeed: 1500,
+        smartSpeed: 1000,
         dotClass: "owl-dot",
     dotsClass: "owl-dots",
     dotContainerClass: "owl-dot-container",
@@ -25,17 +24,17 @@ const Cat = () => {
       const data = [
         {
           id: 1,
-          text: "Beautiful sunset over the mountains",
+          text:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cupiditate, necessitatibus  ",
           path: photo1,
         },
         {
           id: 2,
-          text: "Adorable puppy playing in the park",
+          text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cupiditate, necessitatibus " ,
           path: photo2,
         },
         {
           id: 3,
-          text: "Delicious assortment of fruits",
+          text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cupiditate, necessitatibus  " ,
           path: photo3,
         },
       ];
@@ -44,13 +43,15 @@ const Cat = () => {
     
 
     <OwlCarousel className="owl-theme" {...settings}>
-    {/* {data.map((item) => (
-      <HomeBlock key={item.id} txt={item.text} img={item.path} />
-    ))} */}
+    {data.map((item,id) => (
+        <div key={id}>
+          <p className='txt'>{item.text} </p>
+          <img className='img' src={item.path} alt={item.id} />
+        </div>
 
-    <img src={photo1} alt="" />
-    <img src={photo2} alt="" />
-    <img src={photo3} alt="" />
+    ))}
+
+  
   </OwlCarousel>
 
   )

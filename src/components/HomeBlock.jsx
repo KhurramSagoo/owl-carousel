@@ -10,10 +10,10 @@ const HomeBlock = (props) => {
     <div className="block-container">
       
      
-          <div className="content">
+          {/* <div className="content"> */}
             <h2>{props.txt}</h2>
-            <img src={props.img} alt="" />
-          </div>
+            <img src={props.img} alt={props.txt} />
+          {/* </div> */}
       
     </div>
   );
